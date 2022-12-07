@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta charset="utf-8" />
+
+    <title>Details - Advance Publication Query System</title>
+
+    <link href="/net4/ITU-R/SpaceWISC/apipub/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <meta name="viewport" content="width=device-width" />
+
+
+
+    <link href="/net4/ITU-R/SpaceWISC/apipub/Content/site.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/style.css" rel="stylesheet"/>
+
+
+
+    <script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/jquery-1.7.1.js"></script>
+
+<script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/jquery-1.9.1.js"></script>
+
+
+
+    <script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/jquery-ui-1.10.0.js"></script>
+
+<script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/jquery-ui-1.8.20.js"></script>
+
+
+
+    <script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/modernizr-2.5.3.js"></script>
+
+
+
+    <script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/jquery.jqGrid.js"></script>
+
+
+
+    <script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/bootstrap.js"></script>
+
+
+
+    <script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/spin.js"></script>
+
+
+
+    <style type="text/css">
+
+        /*        .navbar-custom {
+
+    background-color:#229922;
+
+    color:#ffffff;
+
+    border-radius:0;
+
+}
+
+
+
+.navbar-custom .navbar-nav > li > a {
+
+    color:#fff;
+
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+
+    color: #ffffff;
+
+    background-color:transparent;
+
+}
+
+.navbar-custom .navbar-brand {
+
+    color:#eeeeee;
+
+}*/
+
+        .container
+
+        {
+
+            display: table;
+
+            width: 100%;
+
+        }
+
+
+
+        .row
+
+        {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: table-row;
+
+        }
+
+
+
+        .col-sm-4
+
+        {
+
+            display: table-cell;
+
+        }
+
+    </style>
+
+
+
+
+
+
+
+    <script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/html5shiv.js"> </script>
+
+    <script src="/net4/ITU-R/SpaceWISC/apipub/Scripts/respond.min.js"> </script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <header>
+
+
+
+        <div class="content-wrapper" style="width: 100%;">
+
+            <div class="container" style="width: 100%;">
+
+                <div class="row" style="width: 100%;">
+
+                    <div class=" col-md-4">
+
+                        <img src="/net4/ITU-R/SpaceWISC/apipub/Images/ITU-br.png" width="70px" />
+
+                    </div>
+
+
+
+                    <div class=" col-md-8">
+
+                        <p class="site-title"><a href="/net4/ITU-R/SpaceWISC/apipub/">Advance Publication Query System</a></p>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+                <br />
+
+                <div class="row" style="background-color: #2C70B1;">
+
+                    <div class="col-md-8" style="width: 100%;">
+
+                        <div class="navbar-collapse collapse">
+
+                            <ul class="nav navbar-nav">
+
+                                <li><a href="/net4/ITU-R/SpaceWISC/apipub/">API QUERY</a></li>
+
+                                <li><a href="/net4/ITU-R/SpaceWISC/apipub/IFIC">API IFIC DATA</a></li>
+
+                                <li><a href="/net4/ITU-R/SpaceWISC/apipub/IFIC/Apic">API/C IFIC PDF</a></li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!--<div class="col-md-4">
+
+                        <span class="search-container" style="margin-left: 10px; margin-top: 10px; display: inline-block; width: 100%;">
+
+                            <p style="color: white; font-size: larger; vertical-align: middle;"><strong>Query API subject to Coordination</strong></p>
+
+                        </span>
+
+                    </div>-->
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </header>
+
+    <div id="body">
+
+        
+
+        <section class="content-wrapper main-content clear-fix">
+
+            
+
+
+
+<link rel="stylesheet" href="/net4/ITU-R/SpaceWISC/apipub/Content/SearchBox.css">
+
+<style type="text/css">
+
+    #criteria span {
+
+        width: 150px;
+
+        font-weight: bold;
+
+        display: inline-block;
+
+    }
+
+
+
+    #criteria select {
+
+        width: 300px;
+
+        height: 30px;
+
+    }
+
+
+
+    #leftCol {
+
+        width: 500px;
+
+        float: left;
+
+    }
+
+
+
+    #rightCol {
+
+        float: left;
+
+        padding-top: 80px;
+
+    }
+
+
+
+    .date-field {
+
+        width: 100px;
+
+    }
+
+</style>
+
+<div class="search-container section-label section-label-text-1" style="background-color: #2C70B1; max-height: 40px; height: 40px; width: 100%;">
+
+    <span class="search-container" style="margin-left: 10px; margin-top: 10px; display: inline-block">Query API subject to Coordination</span>
+
+</div>
+
+<p>
+
+    <input type="button" value="Go Back" onclick="history.back()" />
+
+</p>
+
+<fieldset style="width: 100%; min-width: 950px">
+
+    <legend>Advance publication information</legend>
+
+
+
+
+
+    <table class="tt" style="width: 100%; font-family: Arial; font-size: small;">
+
+
+
+        <tr style="border-style: solid solid hidden solid; border-top-width: thin; border-right-width: thin;">
+
+            <td colspan="6" style="background-color: #C0C0C0"></td>
+
+
+
+        </tr>
+
+        <tr>
+
+            <td>
+
+                <strong> Action Code:</strong>
+
+                <span>M</span>
+
+            </td>
+
+
+
+        </tr>
+
+        <tr>
+
+
+
+            <td>
+
+                <strong>A1a Sat.Network:</strong>
+
+                <span>AQUARIUS</span>
+
+
+
+            </td>
+
+            <td>
+
+                <strong> Notifying adm:</strong>
+
+                <span>USA</span>
+
+
+
+            </td>
+
+            <td>
+
+                <strong>A1f3 Inter. sat. org.:</strong>
+
+
+
+                    <span></span>
+
+
+
+            </td>
+
+            <td>
+
+                <strong>BR1 Date of receipt:</strong>
+
+                <span>14.06.2011</span>
+
+
+
+            </td>
+
+            <td>
+
+                <strong>BR20 BR IFIC no.:</strong>
+
+                <span>2715</span>
+
+
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td colspan="2">
+
+                <strong>BR6a/BR6b Id. no.:</strong>
+
+                <span>109540036</span>
+
+            </td>
+
+            <td colspan="4">
+
+                <strong> Provision reference:</strong>
+
+                <span>9.1/IB      </span>
+
+
+
+            </td>
+
+
+
+        </tr>
+
+    </table>
+
+    <table style="width: 100%; font-family: Arial; font-size: small;">
+
+        <tr>
+
+            <td>
+
+                <strong>A1f2 Submitted on behalf:</strong>
+
+
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+
+                                    <span><strong>Ref. body:</strong></span> <span>T</span>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+
+
+
+    <table style="border: solid; border-width: thin; border-top-width: thin; border-right-width: thin; border-left-width: thin; border-bottom-width: thin; width: 100%; font-family: Arial; font-size: small;">
+
+        <tr style="background-color: #C0C0C0; width: 100%; font-family: Arial; font-size: small; border: 1px;">
+
+
+
+            <th rowspan="2" width="80" >
+
+                <span style="display: block; font-size: small;text-align: center;">BR7a<br />&nbsp;Group id&nbsp;</span>
+
+            </th>
+
+            <th width="80" rowspan="2" >
+
+                <span style="display: block; font-size: small; text-align: center;">BR1<br />Date of receipt</span>
+
+            </th>
+
+            <th width="10" rowspan="2">
+
+                <span style="display: block; font-size: small; text-align: center;">B2<br />Emi-Rcp</span>
+
+            </th>
+
+            <th width="20" rowspan="2">
+
+                <span style="display: block; font-size: small;text-align: center;">BR9<br />Action Code</span>
+
+            </th>
+
+            <th colspan="2"><span style="display: block; font-size: small;text-align: center;">BR47<br /> Frequency band</span></th>
+
+            <th width="200" rowspan="2">
+
+                <span style="display: block; font-size: small; text-align: center;">C4a/C4b<br /> Class of station/ Nature of Service</span>
+
+            </th>
+
+            <th rowspan="2">
+
+                <span style="display: block; font-size: small; text-align: center;">A2b<br />Period of Validity</span>
+
+            </th>
+
+            <th rowspan="2">
+
+                <span style="display: block; font-size: small; text-align: center;">C11a<br /> Service Area</span>
+
+            </th>
+
+            <th colspan="2"><span style="display: block; font-size: small;text-align: center;">Regulatory Date Limits</span></th>
+
+        <tr>
+
+            <th><span style="display: block; background-color: #C0C0C0;font-size: small; text-align: center;">From</span></th>
+
+            <th><span style="display: block; background-color: #C0C0C0;font-size: small; text-align: center;"> To</span></th>
+
+            <th><span style="display: block; background-color: #C0C0C0;font-size: small; text-align: center;"> No.9.5 D</span></th>
+
+            <th><span style="display: block; background-color: #C0C0C0;font-size: small; text-align: center;">No.11.44</span></th>
+
+            <tr>
+
+                <td>
+
+                    <div style="text-align: center;display:block;">111676322    </div>
+
+                </td>
+
+                <td width="30px" style="text-align: center;">
+
+                    <div style="text-align: center;">14.06.2011</div>
+
+                </td>
+
+                <td style="text-align: center;">
+
+                    <div style="text-align: center;">E</div>
+
+                </td>
+
+
+
+                <td style="text-align: center;">
+
+                    <div></div>
+
+                </td>
+
+                <td width="90px" style="text-align: center;">
+
+                    <div>1260 M</div>
+
+                </td>
+
+                <td width="90px" style="text-align: center;">
+
+                    <div>1262 M</div>
+
+                </td>
+
+                <td style="text-align: center;">
+
+                    <div>    <span>E3/CO </span>
+
+</div>
+
+                </td>
+
+                <td style="text-align: center;">
+
+                    <div>5</div>
+
+                </td>
+
+                <td style="text-align: center;max-width:250px;word-wrap: break-word;">
+
+                        <span></span>
+
+                </td>
+
+                <td style="text-align: center;">
+
+                 
+
+                        <div>14.06.2013</div>
+
+                </td>
+
+                <td style="text-align: center;">
+
+                        <div>14.06.2018</div>
+
+                </td>
+
+            </tr>
+
+
+
+        </table>
+
+
+
+
+
+
+
+    </fieldset>
+
+
+
+
+
+        </section>
+
+    </div>
+
+    <footer>
+
+        <div class="content-wrapper">
+
+            <div class="float-left">
+
+                <p>&copy; 2022 - ITU - SpaceWISC</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.core.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.resizable.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.selectable.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.accordion.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.autocomplete.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.button.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.dialog.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.slider.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.tabs.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.datepicker.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.progressbar.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/themes/base/jquery.ui.theme.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/site.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/style.css" rel="stylesheet"/>
+
+<link href="/net4/ITU-R/SpaceWISC/apipub/Content/bootstrap.css" rel="stylesheet"/>
+
+
+
+
+
+    
+
+</body>
+
+</html>
+
